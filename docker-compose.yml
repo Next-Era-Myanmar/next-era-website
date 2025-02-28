@@ -1,0 +1,10 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: nxera-web
+    ports:
+      - "8011:80"
+    volumes:
+      - ./src:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    restart: on-failure
