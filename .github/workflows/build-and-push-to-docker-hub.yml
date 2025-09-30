@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Docker Compose Pull
-        run: /usr/bin/docker compose pull nxera-web
+        run: /usr/bin/docker compose pull web
         
       - name: Docker Compose Deploy
         run: /usr/bin/docker compose up -d
