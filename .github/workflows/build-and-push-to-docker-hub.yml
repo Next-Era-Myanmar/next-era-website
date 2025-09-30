@@ -28,7 +28,8 @@ jobs:
           tags: ${{ secrets.NXERADOCKERHUBUSERNAME }}/next-era-website:latest # Tag your image
   deploy-to-server:
     runs-on: self-hosted
-
+    needs: [build_and_push]
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
