@@ -26,3 +26,12 @@ jobs:
           context: . # Directory containing your Dockerfile
           push: true # Push the image to Docker Hub
           tags: ${{ secrets.NXERADOCKERHUBUSERNAME }}/next-era-website:latest # Tag your image
+  deploy-to-server:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Docker Compose Deploy
+        run: /usr/bin/docker compose up -d
