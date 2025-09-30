@@ -8,7 +8,9 @@ services:
       - ./src:/usr/share/nginx/html
       - ./nginx/conf.d:/etc/nginx/conf.d
     restart: on-failure
-    
+    networks:
+      - npm-net
+      
 networks:
   npm-net:
     external: true
